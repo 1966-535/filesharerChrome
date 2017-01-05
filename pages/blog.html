@@ -1,0 +1,112 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
+<div class="main-search-container">
+    <div class="main">
+        <div class="main-search main-search-results ">
+
+            <div class="main-search--heading">
+                <span class="main-search--heading-subtitle"></span>
+            </div>
+
+          <!--  <div>
+		<form  method="post" action='<?php echo base_url()."pages/search"?>'  id="searchform">
+			<div class="col-sm-3 col-md-6"> 
+			  <div class="controls">
+				<input class="form-control"  type="text" name="title" placeholder="Type in a  job title, keyword or company name" />
+			  </div>
+			</div>
+			<div class="col-sm-3 col-md-6 pull-right"> 
+			  <div class="controls "> 
+				<input class="form-control" id="disabledInput" type="text" placeholder=" " disabled>
+			  </div>
+			</div>
+			<div class="col-sm-12 col-md-12 pull-center"><br>
+			     <button type="submit" class="btn btn-block btn-primary"><span class="glyphicon glyphicon-search"></span> Search</button> 
+			</div>
+	  </form>
+            </div>-->
+			
+			
+<div >
+<form  method="post" action='<?php echo base_url()."pages/search"?>'  id="searchform">					        	 
+<div class="input-group">
+	<input class="form-control"  type="text" name="title" placeholder="Type in a  job title, keyword or company name" />
+	<!-- <input class="form-control"  type="text" name="title" placeholder="Type in a  location" /> -->
+<div class="input-group-btn">
+<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"> </span> Search</button>
+</div>
+</div>
+</form>
+</div>
+
+        </div>
+    </div>
+</div> 
+
+<div class="main">
+ <?php  $site_url  ;?>
+	<!--<div align ='center'><small><i></i></small><br><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+-- jobsearch_header_ad --
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-2293334056925075"
+     data-ad-slot="7508705043"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>-->
+    <ul class="search-results"> 
+	
+        <?php foreach($records as $item):?>
+        <li class="search-results--item" id="<?= $item->id ?>">
+            <?php  
+			$link_address = $site_url."jobs/view/".$item->slug 
+			
+			?>
+                  
+            <a href="<?= $link_address; ?>" class="search-results--item-link">
+                <?= $item->title ?>
+            </a> <a href="<?= $item->ext_link ?>" target="_blank" alt ="click"><small><i><?= 'Short Description source : '.word_limiter($item->operating_name, 2) ?> </i></small></a>
+
+            <small class="search-results--item-date">
+                <i class="fa fa-fw fa-clock-o"></i> 
+				
+                <?= $item->date; ?><br> 
+				  <a href="<?= $link_address; ?>" target="_blank"> 
+                <button  class="btn btn-primary">Click here to View  </button>
+            </a>
+            </small>
+			<p> 				 
+				<?php
+				$replace_these = ['\n' , 'Filed in', 'by cooljoe on', 'cooljoe' ,'Share this on WhatsApp'];
+				$content = strip_tags(htmlspecialchars_decode(word_limiter($item->text,70)));
+				$content_out = str_replace($replace_these, ' ', $content);
+				echo $content_out;
+				?> 
+            </p>
+		</li>
+        <?php endforeach;?>
+
+      </ul>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- bottomOfJobLinks -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2293334056925075"
+     data-ad-slot="5913573840"
+     data-ad-format="link"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>  
+<div class="text-center"> 
+ <?php 
+	//bootstrap markup in blog controller
+	echo $this->pagination->create_links();
+	?> 
+	
+	
+</div>
+
+
+
+
+

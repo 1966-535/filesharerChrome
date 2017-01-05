@@ -1,0 +1,33 @@
+<div class="jumbotron text-center">
+    <h3>Search</h3>
+     {{ message }} 
+<br><br>
+<table id="searchResult"></table> 
+
+<div class="col-md-4 col-md-offset-4" id="adv-search"> 
+   <p> 
+   <form action="#search">
+      <div class="form-group">
+        <label for="filter" >Filter by</label>
+        <select class="form-control"  id ='location'>
+            <option value="" selected>Location</option>
+            <option value="Lagos">Lagos</option>
+            <option value="Abuja">Abuja</option>
+            <option value="Owerri">Owerri</option>
+            <option value="some city">Msome city</option>
+        </select>
+      </div>
+      <div class="form-group" >
+        <label for="contain">Type in job title or keywords</label>
+        <input class="form-control" type="text"  id ='searchTerm' />
+      </div>
+
+      <button id='mysearchJson' class="btn btn-primary" target='_blank'>Search</button>
+
+    </form ></p>
+  </div>
+</div>
+
+<noscript>
+  <h3> Hi! this requires javascript</h3>
+</noscript>

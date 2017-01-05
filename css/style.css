@@ -1,0 +1,9 @@
+/*
+Main stylesheet
+Author: Obinna Merenu
+
+*/
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+	display: none;
+}

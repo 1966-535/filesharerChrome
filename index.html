@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="jobApp" ng-cloak>
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SCROLLS -->
+ <!--  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" /> -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/font-awesome.css" />
+    <style>
+ /*
+ *  Inline CSS to be moved to own file later.
+
+ Included when we wait to call AngularJS at the end of the document */
+    [ng\:cloak], [ng-cloak], .ng-cloak {
+      display: none;
+    }
+    </style>
+
+</head>
+
+<!-- define angular controller -->
+<body ng-controller="mainController">
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="#">LOGO</a>
+      </div>
+      <div class='navbar-collapse collapse'>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class ='active'><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+        <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+      </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="main">
+    <!-- angular templating -->
+    <!-- this is where content will be injected -->
+    <div ng-view></div>
+  </div>
+ <br>
+  <footer class="text-center">
+        <p>This project is maintained by <a href="https://github.com/hirecriers">
+<img src="resources/GitHub-Mark-32px.png" alt="github logo"
+ style="width:32px;height:32px;"></a>
+ <br></p>
+  </footer>
+  
+<!-- 
+Vendor libraries
+ -->
+<script src="js/vendors/jquery.js"  crossorigin="anonymous"></script>
+<script src="js/vendors/bootstrap.js"  crossorigin="anonymous"></script>
+<script src="js/vendors/fuse.min.js"  crossorigin="anonymous"></script><!-- 
+<script src="js/vendors/angular.min.js"  crossorigin="anonymous"></script>
+<script src="js/vendors/angular-route.js"  crossorigin="anonymous"></script> -->
+<!-- Angular CDN--> 
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script> 
+
+<!-- custom JavaScript -->
+<!-- 
+<script src="js/logic/rss.js" async defer></script> -->
+<script src="js/logic/ee.xml" async defer></script>
+<script src="js/logic/router.js" async defer></script>
+
+</body>
+</html>
