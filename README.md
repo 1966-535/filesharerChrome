@@ -18,4 +18,4 @@ the license here.
 
 ### Who do I talk to? ###
 
-* Repo owner / admin: oldmanobi & bitruspikin.
+* Repo owner / admin: oldmanobi & bitruss.
